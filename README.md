@@ -1,5 +1,7 @@
 # ResumeLens（简历初审 × 飞书 CLI）
 
+**仓库**：[github.com/Lucky2024-pllove/ResumeLens](https://github.com/Lucky2024-pllove/ResumeLens)
+
 面向招聘初筛的 **Agent Skill**：对简历做结构化提取、维度打分、风险与面试题、薪酬参考；在用户需要时，通过 **[飞书官方 CLI `@larksuite/cli`](https://www.npmjs.com/package/@larksuite/cli)** 将结果写入 **多维表格（Base）** 或 **云文档（docs）**。
 
 ## 功能概览
