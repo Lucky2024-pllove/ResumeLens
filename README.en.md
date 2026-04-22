@@ -19,11 +19,7 @@
   <img src="https://img.shields.io/badge/agent--agnostic-SKILL.md%20ready-brightgreen" alt="agent agnostic">
 </p>
 
-<p align="center">
-  <a href="https://github.com/Lucky2024-pllove/ResumeLens">Repository</a> |
-  <a href="https://github.com/larksuite/cli">lark-cli</a> |
-  <a href="https://github.com/Lucky2024-pllove/ResumeLens/issues">Issues</a>
-</p>
+⬇️ [简体中文](./README.md) · `skill` · `resume` · `lark-cli` · `agent-agnostic`
 
 ---
 
@@ -72,7 +68,7 @@ Screen this resume against the JD below; output standard JSON. If I confirm Feis
 Clarify the delivery mode:
 
 - **JSON / brief / long report in chat** → no `lark-cli` required.
-- **Base** → supply or authorize `base_token` / `table_id` (see [SKILL.md](./SKILL.md) §D).
+- **Base** → supply or authorize `base_token` / `table_id` (see [SKILL.md](./SKILL.md), workflow **D** — write to Feishu Base).
 - **Cloud doc** → `docs +create` or `+update` on an existing doc; **Wiki** URLs need node resolution (see [SKILL.md](./SKILL.md) and [`references/lark-wiki/`](./references/lark-wiki/SKILL.md)).
 
 ## Architecture
@@ -95,7 +91,7 @@ flowchart TB
 ### Prerequisites
 
 - An agent that supports the [SKILL.md convention](https://docs.anthropic.com/en/docs/claude-code/skills) (see [Agent compatibility](#agent-compatibility))
-- For Feishu writes: **[Node.js](https://nodejs.org/)** and globally available **[`@larksuite/cli`](https://www.npmjs.com/package/@larksuite/cli)** (`lark-cli`)
+- For Feishu writes: **[Node.js](https://nodejs.org/)** and a working **`@larksuite/cli`** (`lark-cli`) install (e.g. `npm i -g` or any setup where `lark-cli` is on your `PATH`)
 - A Feishu developer app and user / app auth (scopes per console and CLI error hints)
 
 ### How to add this skill
@@ -175,7 +171,7 @@ lark-cli docs +update --as user \
 
 | Path | Description |
 |------|-------------|
-| [`SKILL.md`](./SKILL.md) | Main skill: workflow, rubric, JSON schema, mandatory Feishu steps, scope table |
+| [`SKILL.md`](./SKILL.md) | Main skill: workflow, rubric, standard JSON format, mandatory Feishu steps, scope table |
 | [`references/`](./references/) | Vendored `lark-*` `SKILL.md` copies + Base record-value helper for offline use |
 | [`references/README.md`](./references/README.md) | Source paths and re-sync notes |
 | [`demo/`](./demo/) | Fictional resume/JD/sample JSON—see [`demo/README.md`](./demo/README.md) |
@@ -198,7 +194,7 @@ This is a standard `SKILL.md` package. Typical placement: **project root** or **
 
 ## Disclaimer
 
-Output is **assistant screening information only**—**not** legal or hiring advice. Pay bands and hire/no-hire must be decided by HR and the line org using company policy and market data.
+Output is **assistant screening information only**—**not** legal advice, hiring advice, or a hiring commitment. Pay bands and hire/no-hire must be decided by HR and the line org using company policy and market data.
 
 ## Contributing & license
 

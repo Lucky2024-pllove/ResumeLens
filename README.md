@@ -19,11 +19,7 @@
   <img src="https://img.shields.io/badge/agent--agnostic-SKILL.md%20ready-brightgreen" alt="agent agnostic">
 </p>
 
-<p align="center">
-  <a href="https://github.com/Lucky2024-pllove/ResumeLens">仓库</a> |
-  <a href="https://github.com/larksuite/cli">lark-cli</a> |
-  <a href="https://github.com/Lucky2024-pllove/ResumeLens/issues">Issues</a>
-</p>
+⬇️ [English](./README.en.md) · `skill` · `resume` · `lark-cli` · `agent-agnostic`
 
 ---
 
@@ -47,7 +43,7 @@
 
 ## 它解决什么问题
 
-初筛阶段要在对话里**快速、可比、可追溯**地看清候选人：维得分、风险点、面试追问、大致薪酬区间。若团队用飞书沉淀数据，还希望**直接写入 Base 做筛选统计**，或**写入云文档**给业务方阅评——但手动复制粘贴易错、无审计。
+初筛阶段要在对话里**快速、可比、可追溯**地看清候选人：各维度得分、风险点、面试追问、大致薪酬区间。若团队用飞书沉淀数据，还希望**直接写入 Base 做筛选统计**，或**写入云文档**给业务方阅评——但手动复制粘贴易错、无审计。
 
 **ResumeLens** 用一份 [`SKILL.md`](./SKILL.md) 约定评分口径、JSON 与飞书写入流程；在需要落地飞书时，**必须通过 `lark-cli` 真实执行**并回传结果链接或错误，而不是口头声称已保存。
 
@@ -72,7 +68,7 @@
 也可以直接说明输出形态：
 
 - 只要会话内 **JSON / 简报 / 详细报告** → 无需 `lark-cli`。
-- 要 **Base** → 提供或授权创建 `base_token` / `table_id`（见 [`SKILL.md`](./SKILL.md) 第四节）。
+- 要 **Base** → 提供或授权创建 `base_token` / `table_id`（见 [`SKILL.md`](./SKILL.md) 标准工作流 **D** — 输出写入飞书多维表格）。
 - 要 **云文档** → 新建 `docs +create` 或 `+update` 追加到已有 `doc`；Wiki 链需先解析节点（见 `SKILL.md` 与 [`references/lark-wiki/`](./references/lark-wiki/SKILL.md)）。
 
 ## 架构
@@ -176,7 +172,7 @@ lark-cli docs +update --as user \
 | 路径 | 说明 |
 |------|------|
 | [`SKILL.md`](./SKILL.md) | 主技能：工作流、评分规则、标准 JSON、飞书 CLI 强制步骤、权限表 |
-| [`references/`](./references/) | 随仓 `lark-shared` / `lark-base` / `lark-doc` / `lark-wiki` 的 `SKILL.md` 副本 + Base 记录值速查，便于离线 |
+| [`references/`](./references/) | 本仓库附带的 `lark-shared` / `lark-base` / `lark-doc` / `lark-wiki` 的 `SKILL.md` 副本 + Base 记录值速查，便于离线查阅 |
 | [`references/README.md`](./references/README.md) | 副本来源与同步说明 |
 | [`demo/`](./demo/) | 虚构简历、JD、与 JSON 对齐的样例，见 [`demo/README.md`](./demo/README.md) |
 | [`README.en.md`](./README.en.md) | 英文版说明 |
