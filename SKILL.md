@@ -1,6 +1,6 @@
 ---
 name: resume-screening-independent
-version: 1.1.0
+version: 1.2.0
 description: "智能简历初审评估 + 飞书落地：用 lark-cli 将评估结果写入多维表格（Base）或云文档（docs）。当用户需要简历初筛/批量排序/候选人对比/面试题与薪酬建议，并可选同步到飞书时使用。"
 metadata:
   requires:
@@ -14,7 +14,10 @@ metadata:
 
 本 Skill 用于在招聘初筛场景中，对简历做结构化提取与多维评估，输出可直接用于 HR 决策和面试准备的结果。**当用户要求写入飞书（Base 或云文档）时，必须通过 `lark-cli` 执行写入，不得仅用自然语言假装已写入。**
 
-执行前请先阅读飞书 CLI 共享规则（认证、`--as user`/`bot`、scope、`auth login`）：以 `npx skills add larksuite/cli` 等方式安装 CLI 时附带的 **`lark-shared`** Skill，或运行 `lark-cli` 时错误提示中的 `console_url` / `hint`。
+执行前请先阅读飞书 CLI 共享规则（认证、`--as user`/`bot`、scope、`auth login`）。资料来源二选一（内容应对齐）：
+
+- **本仓库内副本（优先）**：[`references/lark-shared/SKILL.md`](./references/lark-shared/SKILL.md)；写入 Base/云文档时另读 [`references/lark-base/SKILL.md`](./references/lark-base/SKILL.md)、[`references/lark-doc/SKILL.md`](./references/lark-doc/SKILL.md)；解析 Wiki 链接时读 [`references/lark-wiki/SKILL.md`](./references/lark-wiki/SKILL.md)。
+- **随 CLI 分发的技能包**：`npx skills add larksuite/cli` 等安装方式附带的 **`lark-shared`** 等；或运行 `lark-cli` 时错误提示中的 `console_url` / `hint`。
 
 能力范围：
 - 单份简历深度审核（信息提取 + 匹配评分 + 风险识别）
@@ -138,7 +141,7 @@ metadata:
 3. **定位数据表**：若无 `table_id`，在目标 Base 中建表（字段与下文「飞书落地模板 A」对齐，类型需符合 Base 字段规范）：  
    `lark-cli base +table-create --base-token <bascn...> --name "候选人评估" --fields '[{"name":"姓名","type":"text"},...]'`  
    若表已存在：先 `lark-cli base +table-list --base-token <bascn...>`，再 `lark-cli base +field-list --base-token <bascn...> --table-id <tbl...>` 核对字段名。  
-4. **组装记录值**：将「标准 JSON」中的维度映射到表字段；多行文本、标签等类型须按 `lark-cli` Base 记录值规范填写（参考官方 `lark-base` skill 中 `lark-base-shortcut-record-value.md`），禁止凭感觉拼结构。  
+4. **组装记录值**：将「标准 JSON」中的维度映射到表字段；多行文本、标签等类型须按 `lark-cli` Base 记录值规范填写（见本仓库 [`references/lark-base/references/lark-base-shortcut-record-value.md`](./references/lark-base/references/lark-base-shortcut-record-value.md)），禁止凭感觉拼结构。  
 5. **写入**：单条可用原生 API 风格创建；批量优先（单次 ≤200 行）：  
    `lark-cli base +record-batch-create --base-token <bascn...> --table-id <tbl...> --json '{"fields":["姓名","综合得分",...],"rows":[["张三",8.2,...],...]}'`  
    超大批次分批调用。  
@@ -362,7 +365,7 @@ metadata:
 
 ## 飞书 CLI 速查（Agent 执行清单）
 
-以下命令与 `@larksuite/cli` 及官方 `lark-base` / `lark-doc` skill 一致；**云文档请使用 `docs` 服务名，不要使用不存在的 `docx` 顶层命令**。
+以下命令与 `@larksuite/cli` 及本仓库 [`references/`](./references/) 中 `lark-base` / `lark-doc` 技能正文一致；**云文档请使用 `docs` 服务名，不要使用不存在的 `docx` 顶层命令**。
 
 ```bash
 # 配置与登录（首次 / 缺 scope）
