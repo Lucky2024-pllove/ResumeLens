@@ -1,8 +1,8 @@
 <div align="center">
   <h1>ResumeLens</h1>
   <p>
-    <strong>智能简历初审 × 飞书 CLI 落地</strong><br>
-    对简历做结构化评估、风险与面试题、薪酬参考；需要时通过 <a href="https://www.npmjs.com/package/@larksuite/cli">lark-cli</a> 将结果写入多维表格（Base）或云文档（docs），禁止「假装已写入」。
+    <strong>把岗位要求和简历对清楚，初筛结论一眼可比</strong><br>
+    在对话中产出<strong>结构化初评</strong>：各维度得分、风险点、面试追问、薪酬参考等。本技能<strong>支持飞书</strong>：在配置好应用与权限后，可用 <a href="https://www.npmjs.com/package/@larksuite/cli">lark-cli</a> 将结果写入<strong>多维表格（Base）</strong>或<strong>云文档</strong>。飞书侧操作步骤、权限与落地模板见 <a href="./SKILL.md">SKILL.md</a>。
   </p>
 </div>
 
@@ -43,9 +43,9 @@
 
 ## 它解决什么问题
 
-初筛阶段要在对话里**快速、可比、可追溯**地看清候选人：各维度得分、风险点、面试追问、大致薪酬区间。若团队用飞书沉淀数据，还希望**直接写入 Base 做筛选统计**，或**写入云文档**给业务方阅评——但手动复制粘贴易错、无审计。
+初筛阶段要在对话里**快速、可比、可追溯**地看清候选人：各维度得分、风险点、面试追问、大致薪酬区间。若要把初评**同步到飞书**（在多维表格里做筛选统计、或用云文档给业务方阅评），还希望**少手工复制、结果可留痕**。
 
-**ResumeLens** 用一份 [`SKILL.md`](./SKILL.md) 约定评分口径、JSON 与飞书写入流程；在需要落地飞书时，**必须通过 `lark-cli` 真实执行**并回传结果链接或错误，而不是口头声称已保存。
+**ResumeLens** 用一份 [`SKILL.md`](./SKILL.md) 约定评分口径、标准 JSON 与飞书写入方式；需要落地时通过 **`lark-cli`** 执行并保留可核对的输出（链接或错误信息），具体流程与禁止项以 `SKILL.md` 为准。
 
 ## Before / After
 

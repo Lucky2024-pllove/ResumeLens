@@ -1,8 +1,8 @@
 <div align="center">
   <h1>ResumeLens</h1>
   <p>
-    <strong>Intelligent resume screening & Feishu (Lark) CLI delivery</strong><br>
-    Structured evaluation, risk flags, interview prompts, and salary reference; when needed, write results to Base or cloud docs via <a href="https://www.npmjs.com/package/@larksuite/cli">lark-cli</a>—no “pretend it’s saved” without a real command run.
+    <strong>Line up the JD and the resume—first-pass review you can compare</strong><br>
+    In chat, get a <strong>structured first-pass review</strong>: dimension scores, risks, follow-up questions, and pay reference. The skill <strong>supports Feishu</strong>: with your app and permissions set up, use <a href="https://www.npmjs.com/package/@larksuite/cli">lark-cli</a> to write to <strong>Base</strong> (spreadsheet) or <strong>cloud documents</strong>. Feishu steps, scopes, and “template A” live in <a href="./SKILL.md">SKILL.md</a>.
   </p>
 </div>
 
@@ -43,9 +43,9 @@
 
 ## What it solves
 
-In early screening you need **fast, comparable, traceable** views of a candidate: dimension scores, risks, follow-up questions, and rough pay bands. If your team uses Feishu, you also want **Base** for filtering and stats or **cloud docs** for stakeholders—without fragile copy-paste and without fake “saved to Feishu” claims.
+In early screening you need **fast, comparable, traceable** views of a candidate: dimension scores, risks, follow-up questions, and rough pay bands. If you need those results **in Feishu**—**Base** for filtering and rollups or **cloud docs** for stakeholders—you also want **less copy-paste** and a **clear audit trail**.
 
-**ResumeLens** encodes rubrics, JSON shape, and Feishu write steps in a single [`SKILL.md`](./SKILL.md). When Feishu is requested, the agent must **run `lark-cli` for real** and return links or error output, not just claim success.
+**ResumeLens** encodes rubrics, standard JSON, and how Feishu writes work in a single [`SKILL.md`](./SKILL.md). For real exports, the agent should run **`lark-cli`** and keep verifiable output (links or errors), per `SKILL.md`.
 
 ## Before / After
 
